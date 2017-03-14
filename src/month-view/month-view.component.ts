@@ -63,7 +63,6 @@ export class GmMonthViewComponent implements OnInit {
             date: dayDate,
             differentMonth: inDifferentMonth,
             items: (inDifferentMonth ? [] : this.items.filter( i => {
-              console.log(i.date);
               return new Date(i.date).setHours(0, 0, 0, 0) === dayDate.valueOf();
             }))
           };

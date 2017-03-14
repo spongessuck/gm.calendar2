@@ -9,15 +9,15 @@ import { GmDayViewItem } from '../../day-view-item';
 @Component({
   selector: 'gm-event-view',
   template: `
-    <div class='gm-cal-item-spacer' *ngFor='let before of blockItem.before'></div>
-    <div class='gm-cal-item-container'>
-      <div class='gm-cal-item'
-          [style.height.px]='blockItem.height'>
+    <div class="gm-cal-item-spacer" *ngFor="let before of dayViewItem.before"></div>
+    <div class="gm-cal-item-container">
+      <div class="gm-cal-item"
+          [style.height.px]="dayViewItem.height">
         <ng-content></ng-content>
-        <!--<div class='gm-cal-item-footer'>{{item.before.length + ' ' + item.after.length}}</div>-->
+        <!--<div class="gm-cal-item-footer">{{item.before.length + ' ' + item.after.length}}</div>-->
       </div>
     </div>
-    <div class='gm-cal-item-spacer' *ngFor='let after of blockItem.after'></div>
+    <div class="gm-cal-item-spacer" *ngFor="let after of dayViewItem.after"></div>
   `,
   styles: [`
     :host {
@@ -46,21 +46,21 @@ import { GmDayViewItem } from '../../day-view-item';
 export class GmEventViewComponent implements OnInit {
 
   @HostBinding('style.top.px') get pixelsFromTop(): number {
-    if (!this.blockItem || !this.blockItem.pixelsFromTop) {
+    if (!this.dayViewItem || !this.dayViewItem.pixelsFromTop) {
       return 0;
     }
-    return this.blockItem.pixelsFromTop;
+    return this.dayViewItem.pixelsFromTop;
   }
 
   @Input() set item(item: GmDayViewItem) {
-    this.blockItem = (<any>Object).assign(
+    this.dayViewItem = Object.assign(
       {},
       item,
       this.svc.metricsOb(item.startVal, item.endVal)
     );
   }
 
-  blockItem: GmDayViewItem;
+  dayViewItem: GmDayViewItem;
 
   constructor(private svc: GmCalendarService) { }
 

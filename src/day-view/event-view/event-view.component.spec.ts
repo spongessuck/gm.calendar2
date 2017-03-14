@@ -19,7 +19,7 @@ describe('Component: GmEventView', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(GmEventViewComponent);
     component = fixture.componentInstance;
-    component.blockItem = {
+    component.dayViewItem = {
       startTime: { hours: 0, minutes: 0 },
       endTime: { hours: 0, minutes: 0 },
       startVal: 0,

@@ -9,11 +9,11 @@
   </label>
 </div>
 
-<gm-month-view *ngIf="monthMode" [date]="month" [items]="items"></gm-month-view>
+<gm-month-view *ngIf="monthMode" [date]="monthDate" [items]="items"></gm-month-view>
 
 <ng-container *ngIf="!monthMode">
   <div style="text-align:center">
-    <strong>{{now | date:'mediumDate'}}</strong>
+    <strong>{{today | date:'mediumDate'}}</strong>
   </div>
   <div style="height:600px; overflow: auto">
     <gm-day-view-container [scrollToHour]="7">

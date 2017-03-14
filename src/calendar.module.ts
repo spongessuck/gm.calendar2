@@ -26,12 +26,8 @@ const components = [
   imports: [
     CommonModule
   ],
-  declarations: [
-    ...components
-  ],
-  exports: [
-    ...components
-  ],
+  declarations: components,
+  exports: components,
   providers: [GmCalendarService],
   entryComponents: [GmDateViewComponent]
 })

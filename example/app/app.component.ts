@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 import { GmEventItem, GmDayViewItem } from '../../src';
 import { GmCalendarService } from '../../src/calendar.service';
 
-interface EventItem extends GmEventItem {
+interface MyEvent extends GmEventItem {
   title: string;
+  date: Date;
 }
 
 @Component({
@@ -13,29 +14,27 @@ interface EventItem extends GmEventItem {
 })
 export class AppComponent {
   monthMode = true;
-  month = new Date();
+  today = new Date();
+  monthDate = new Date();
   items: GmDayViewItem[];
 
-  private _events = [
+  private _events: MyEvent[] = [
     {
       title: 'hi',
-      date: new Date()
+      date: new Date(),
+      startTime: {
+        hours: 12,
+        minutes: 0
+      },
+      endTime: {
+        hours: 12,
+        minutes: 30
+      }
     }
   ];
 
   constructor() {
-    this.items = GmCalendarService.eventItemsToDayViewItems(this._events.map( event => {
-      return Object.assign({}, event, {
-        startTime: {
-          hours: 22,
-          minutes: 0
-        },
-        endTime: {
-          hours: 22,
-          minutes: 30
-        }
-      });
-    }));
+    this.items = eventItemsToDayViewItems(this._events);
   }
 
   switch(_monthMode: boolean) {
