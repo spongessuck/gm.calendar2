@@ -1,9 +1,128 @@
 # gm.calendar2
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-rc.1.
+[![npm version](https://badge.fury.io/js/gm.calendar2.svg)](https://badge.fury.io/js/gm.calendar2)
+
+## Components
+
+### `gm-month-view`
+
+Displays a month view calendar.
+
+    <gm-month-view [date]="date" [items]="items"></gm-month-view>
+
+#### Inputs
+
+##### `date: Date`
+
+Sets the month displayed by the component based on the month and year.
+
+##### `items: { title: string, date: Date }[]`
+
+  Sets the items displayed on the calendar.
+
+#### Styles
+
+##### .gm-different-month
+
+Used to distinguish between dates in a different month than the one displayed. Set this in the global styles of your application.
+
+```css
+/* Give dates in a different month a slightly gray background */
+.gm-different-month {
+  background-color: #eee;
+}
+```
+
+### `gm-day-view-container`
+
+Displays the times of day and their demarcation lines. Place your `gm-day-view` components in one of these.
+
+```html
+<gm-day-view-container [scrollToHour]="firstHourToShow"></gm-day-view-container>
+```
+
+#### Inputs
+
+##### `scrollToHour: number`
+
+The hour of the day to scroll to, from 0-23. Only works if the parent element of `gm-day-view-container` has a height smaller than `gm-day-view-container` and has its `overflow` style set to something other than `visible`.
+
+### `gm-all-day-view-container`
+
+A container element to hold `gm-day-view` components with events that last all day. Should be placed in an element with a specific height set.
+
+```html
+<gm-all-day-view-container></gm-day-view-container>
+```
+
+### `gm-day-view`
+
+Shows a day view with events spanning their `startTime` and `endTime` properties.
+
+```html
+<gm-day-view [isToday]="isToday"></gm-day-view>
+```
+
+#### Inputs
+
+##### `isToday: boolean`
+
+Determines if the component should render a line designating the current time.
+
+### `gm-event-view`
+
+Placed inside `gm-day-view` elements to display the event details.
+
+In order for these items to be positioned properly, they must implement the `GmEventItem` interface, and you must pass your array of events to `eventItemsToDayViewItems`, which is exported by the main module.
+
+`eventItemsToDayViewItems` analyzes the event items to find overlaps in their start and end times so that they can be arranged adjacently.
+
+```ts
+...
+import { GmDayViewItem,
+         eventItemsToDayViewItems } from 'gm.calendar2'
+
+@Component
+...
+  items: GmDayViewItem[] = eventItemsToDayViewItems([
+    {
+      title: 'My Event',
+      startTime: {
+        hours: 12,
+        minutes: 00
+      },
+      endTime: {
+        hours: 12,
+        minutes: 30
+      }
+    }
+  ]);
+...
+
+```
+
+```html
+<gm-event-view *ngFor="let item of items" [item]="item">
+  {{item.title}}
+</gm-event-view>
+```
+
+You'll need to apply your own style to either `gm-event-view` or its contents.
+
+#### Inputs
+
+##### `item: GmDayViewItem`
+
+An item returned by `eventItemsToDayViewItems`.
+
+<!--# Configuration
+
+You can set the component that should be used by `gm-month-view` to display events by setting `GmCalendarConfig.dateViewComponent`. -->
+
+# Development
 
 ## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` to run the example app. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
@@ -11,7 +130,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Run `npm run build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
 ## Running unit tests
 
