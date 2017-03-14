@@ -4,7 +4,6 @@ import { GmDateViewComponentInterface } from './date-view-component.interface';
 @Component({
   selector: 'gm-date-view',
   templateUrl: './date-view.component.html',
-  // styleUrls: ['./date-view.component.scss']
   styles: [`
     :host {
       display: block;

@@ -16,8 +16,6 @@ import { Component,
     <ng-content></ng-content>
     <div *ngIf='isToday' #nowLine class='gm-day-view-line now'></div>
   `,
-  // templateUrl: './day-view.component.html',
-  // styleUrls: ['./gm-day-view.component.css'],
   styles: [`
     :host {
       flex: 1 0 0;

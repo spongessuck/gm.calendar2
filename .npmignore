@@ -1,4 +1,5 @@
+.*
 example
 e2e
-*.js*
+/*.js*
 *.lock

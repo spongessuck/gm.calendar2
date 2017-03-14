@@ -14,12 +14,9 @@
 		"noImplicitAny": false,
 		"suppressImplicitAnyIndexErrors": true,
 		"sourceRoot": "src",
-		"outDir": "../dist"
+		"outDir": "../"
 	},
 	"files": [
 		"./index.ts"
-	],
-	"angularCompilerOptions": {
-		"genDir": "../.aot"
-	}
+	]
 }

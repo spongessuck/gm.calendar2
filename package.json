@@ -1,13 +1,12 @@
 {
   "name": "gm.calendar2",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
     "ngc": "ngc",
     "start": "ng serve",
-    "build": "rimraf dist && ngc -p src/tsconfig.aot.json && rimraf .aot",
-    "publish": "build",
+    "build": "rimraf dist && gulp --silent && ngc -p dist/temp/tsconfig.aot.json && rimraf dist/temp",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -17,14 +16,16 @@
     "url": "https://github.com/spongessuck/gm.calendar2"
   },
   "main": "dist/index.js",
-  "dependencies": {
+  "peerDependencies": {
     "@angular/common": ">=2.0.0 <5.0.0",
     "@angular/core": ">=2.0.0 <5.0.0"
   },
   "devDependencies": {
     "@angular/cli": "1.0.0-rc.1",
+    "@angular/common": ">=2.0.0 <5.0.0",
     "@angular/compiler": ">=2.0.0 <5.0.0",
     "@angular/compiler-cli": "^>=2.0.0 <5.0.0",
+    "@angular/core": ">=2.0.0 <5.0.0",
     "@angular/forms": ">=2.0.0 <5.0.0",
     "@angular/http": ">=2.0.0 <5.0.0",
     "@angular/platform-browser": ">=2.0.0 <5.0.0",
@@ -34,6 +35,9 @@
     "@types/node": "~6.0.60",
     "codelyzer": "~2.0.0",
     "core-js": "^2.4.1",
+    "gulp": "^3.9.1",
+    "gulp-copy": "^1.0.0",
+    "gulp-inline-ng2-template": "^4.0.0",
     "jasmine-core": "~2.5.2",
     "jasmine-spec-reporter": "~3.2.0",
     "karma": "~1.4.1",
