@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { GmEventItem, GmDayViewItem } from '../../src';
-import { GmCalendarService } from '../../src/calendar.service';
+import { GmEventItem,
+         GmDayViewItem,
+         eventItemsToDayViewItems } from '../../src';
 
 interface MyEvent extends GmEventItem {
   title: string;
