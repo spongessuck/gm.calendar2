@@ -1,0 +1,12 @@
+<table>
+  <thead>
+    <tr>
+      <th colspan="5">{{month.date | date: "MMMM y"}}</th>
+    </tr>
+  </thead>
+  <tr *ngFor="let w of month.weeks">
+    <td *ngFor="let d of w.days">
+      <gm-date-view-entry-point [date]="d.date" [items]="d.items" [differentMonth]="d.differentMonth"></gm-date-view-entry-point>
+    </td>
+  </tr>
+</table>

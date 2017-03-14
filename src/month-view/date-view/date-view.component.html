@@ -1,0 +1,14 @@
+<span>{{date | date:"d"}}</span>
+<table class="table table-sm">
+  <tr *ngFor="let i of items; let $index = index">
+    <!--<td *ngIf="$index < 4">-->
+    <td>
+      <!--<div *ngIf="$index < 3" class="item-row small">-->
+      <div class="item-row small">
+        <div class="item-left text-truncate">{{i.title}}</div>
+        <div class="item-right text-xs-right text-muted small">{{i.date | date: "shortTime"}}</div>
+      </div>
+      <!--<div *ngIf="$index === 3" class="small text-muted">{{items.length - 3}} more...</div>-->
+    </td>
+  </tr>
+</table>
