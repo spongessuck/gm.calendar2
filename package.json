@@ -7,6 +7,7 @@
     "ngc": "ngc",
     "start": "ng serve",
     "build": "rimraf dist && gulp --silent && ngc -p dist/temp/tsconfig.aot.json && rimraf dist/temp",
+    "prepublish": "build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
