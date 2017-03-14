@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+
+.gm-different-month {
+	background: #eee;
+}
+
+gm-date-view {
+  min-height: 150px;
+}

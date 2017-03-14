@@ -1,0 +1,29 @@
+<div>
+  <label for="thing" (click)="switch(true)">
+    Month
+    <input id="thing" name="mode" type="radio" value="1" checked />
+  </label>
+  <label for="thing2" (click)="switch(false)">
+    Day
+    <input id="thing2" name="mode" type="radio" value="0" />
+  </label>
+</div>
+
+<gm-month-view *ngIf="monthMode" [date]="month" [items]="items"></gm-month-view>
+
+<ng-container *ngIf="!monthMode">
+  <div style="text-align:center">
+    <strong>{{now | date:'mediumDate'}}</strong>
+  </div>
+  <div style="height:600px; overflow: auto">
+    <gm-day-view-container [scrollToHour]="7">
+      <gm-day-view [isToday]="true">
+        <gm-event-view *ngFor="let item of items" [item]="item">
+          <div class="item-container">
+            {{item.title}}
+          </div>
+        </gm-event-view>
+      </gm-day-view>
+    </gm-day-view-container>
+  </div>
+</ng-container>
