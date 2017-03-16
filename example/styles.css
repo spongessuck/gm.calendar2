@@ -4,6 +4,15 @@
 	background: #eee;
 }
 
+.gm-cal-item {
+	background: white;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 3px;
+	height: 100%;
+	box-sizing: border-box;
+}
+
 gm-date-view {
   min-height: 150px;
 }

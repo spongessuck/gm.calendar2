@@ -1,12 +1,4 @@
 
-.item-container {
-	border: 1px solid #ccc;
-	border-radius: 5px;
-	padding: 3px;
-	height: 100%;
-	box-sizing: border-box;
-}
-
 gm-day-view-container {
 	height: 1200px;
 }
