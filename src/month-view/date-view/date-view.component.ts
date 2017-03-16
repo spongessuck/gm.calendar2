@@ -10,6 +10,7 @@ import { GmDateViewComponentInterface } from './date-view-component.interface';
     }
 
     table {
+      width: 100%;
       table-layout: fixed;
     }
 
@@ -20,10 +21,16 @@ import { GmDateViewComponentInterface } from './date-view-component.interface';
 
     .item-left {
       flex-grow: 1;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      font-size: smaller;
     }
 
     .item-right {
       flex-shrink: 0;
+      font-size: small;
+      color: #888;
     }
   `]
 })
