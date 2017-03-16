@@ -1,14 +1,30 @@
 language: node_js
+
 node_js:
 - '6'
+
+# addons:
+#   apt:
+#     sources:
+#       - google-chrome
+#     packages:
+#       - google-chrome-stable
+#       - google-chrome-beta
+
 before_install:
-- npm install -g @angular/cli
+  # - export CHROME_BIN=chromium-browser
+  # - export DISPLAY=:99.0
+  # - sh -e /etc/init.d/xvfb start
+  - npm install -g @angular/cli
+
 script: ng test --single-run
-deploy:
-  provider: npm
-  email: spongessuck@gmail.com
-  api_key:
-    secure: bW1Fm9QbYJnE40hwClHJK+a2H5lEUNZXOVMo9Vzgo0er7wUndfMC9X1nH7GqdnQJDi265uMUuM1Jrb/LomcmXxtQVeWmyIkh3f2FhickeA2ESQbi1zijSO7XgHcNDC8DJQQ+OqSbS3/mofI9qlmB8H8wKE6X6Fd3OK8do1vKtuhFaC9nH7yEQpy9tXKDQirPpIZyqyaPrzlqFWNikW39iaGcc9Vn2ZGCurRfdXdKKUQREbeuVfQvOrz5VXvQkhKu7OZWJ8NGwqQ8dcTX4LeV394wA8RMzPj5YT/nlRfe1Zv1i86ufsYbROU3rpNwuqk+4LIdwpRznYvzWPmk2qx1HccHu8wT+N+bnWV2q+1jN95S2F1TvNb+UrFpxytCY++/nqdQcc5MCNyArbGQEebum7EBRyoHSBzVqenK8Cj7Sd7bAz8/ss2E2OBUpXWwCO0y/KZDH9rrGiH3SKxmToPlaY536ED8JQpHhPXAUB9RPiKh4LqDIvuHONcQ+T1/+Ok5ScwVaJ0rHyXTw6Q2f9s+9emJ4jBt2UrC9ODnl/bAvoU7UbnwSwCvwtcEH3ckevM1UMHFT5BnbciYOXDcpGyoYm9mhsa7+cwpRfcRcTR6fRepndZSkp5pk/YuehTIkawMv1tOQbZJ6Mb6iCdxb8cwEaaP9cUk0wl8hcYqpkX3aJA=
-  on:
-    tags: true
-    repo: spongessuck/gm.calendar2
+
+# deploy:
+#   provider: npm
+#   email: spongessuck@gmail.com
+#   api_key:
+#     secure: bW1Fm9QbYJnE40hwClHJK+a2H5lEUNZXOVMo9Vzgo0er7wUndfMC9X1nH7GqdnQJDi265uMUuM1Jrb/LomcmXxtQVeWmyIkh3f2FhickeA2ESQbi1zijSO7XgHcNDC8DJQQ+OqSbS3/mofI9qlmB8H8wKE6X6Fd3OK8do1vKtuhFaC9nH7yEQpy9tXKDQirPpIZyqyaPrzlqFWNikW39iaGcc9Vn2ZGCurRfdXdKKUQREbeuVfQvOrz5VXvQkhKu7OZWJ8NGwqQ8dcTX4LeV394wA8RMzPj5YT/nlRfe1Zv1i86ufsYbROU3rpNwuqk+4LIdwpRznYvzWPmk2qx1HccHu8wT+N+bnWV2q+1jN95S2F1TvNb+UrFpxytCY++/nqdQcc5MCNyArbGQEebum7EBRyoHSBzVqenK8Cj7Sd7bAz8/ss2E2OBUpXWwCO0y/KZDH9rrGiH3SKxmToPlaY536ED8JQpHhPXAUB9RPiKh4LqDIvuHONcQ+T1/+Ok5ScwVaJ0rHyXTw6Q2f9s+9emJ4jBt2UrC9ODnl/bAvoU7UbnwSwCvwtcEH3ckevM1UMHFT5BnbciYOXDcpGyoYm9mhsa7+cwpRfcRcTR6fRepndZSkp5pk/YuehTIkawMv1tOQbZJ6Mb6iCdxb8cwEaaP9cUk0wl8hcYqpkX3aJA=
+#   on:
+#     tags: false
+#     repo: spongessuck/gm.calendar2
+#   skip_cleanup: true
