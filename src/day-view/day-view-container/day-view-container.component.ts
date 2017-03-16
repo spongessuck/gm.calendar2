@@ -10,19 +10,24 @@ interface Marker {
 @Component({
   selector: 'gm-day-view-container',
   template: `
-    <div class='gm-day-view-line' *ngFor='let mark of markers; let $index = index' [style.top.px]='mark.pxFromTop'>
+    <div class="gm-day-view-line" *ngFor="let mark of markers; let $index = index" [style.top.px]="mark.pxFromTop">
       {{markerText($index)}}
     </div>
-    <!--<div class='gm-day-view-line now' [style.top.px]='nowMarker.pxFromTop'></div>-->
-    <div style='height:100%; width:40px'>
+    <!--<div class="gm-day-view-line now" [style.top.px]="nowMarker.pxFromTop"></div>-->
+    <div class="gm-day-view-spacer">
     </div>
-    <!--<gm-day-view *ngFor='let day of days' [items]='day'></gm-day-view>-->
+    <!--<gm-day-view *ngFor="let day of days" [items]="day"></gm-day-view>-->
     <ng-content></ng-content>
   `,
   styles: [`
     :host {
       display: flex;
       position: relative;
+    }
+
+    .gm-day-view-spacer {
+      height: 100%;
+      width: 4rem;
     }
 
     .gm-day-view-line {
