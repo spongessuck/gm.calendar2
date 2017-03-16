@@ -17,7 +17,8 @@ before_install:
   # - sh -e /etc/init.d/xvfb start
   - npm install -g @angular/cli
 
-script: ng test --single-run
+# script: ng test --single-run
+script: ng -v
 
 # deploy:
 #   provider: npm
