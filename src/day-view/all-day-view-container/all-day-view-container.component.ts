@@ -8,7 +8,7 @@ import { GmCalendarService } from '../../calendar.service';
     <div class='gm-day-view-line'>
       All day
     </div>
-    <div style='height:100%; width:40px'>
+    <div class="gm-day-view-spacer">
     </div>
     <!--<gm-day-view *ngFor='let day of days' [items]='day'></gm-day-view>-->
     <ng-content></ng-content>
@@ -17,6 +17,11 @@ import { GmCalendarService } from '../../calendar.service';
     :host {
       display: flex;
       position: relative;
+    }
+
+    .gm-day-view-spacer {
+      height: 100%;
+      width: 4rem;
     }
 
     .gm-day-view-line {
