@@ -24,7 +24,7 @@ export function eventItemsToDayViewItems<T extends GmEventItem>(items: T[]): GmD
       if (i !== j) {
         const compItem = dayViewItems[j];
 
-        const overlapFlags = this.itemOverlapsItem(item, compItem);
+        const overlapFlags = itemOverlapsItem(item, compItem);
 
         if (overlapFlags !== ItemOverlap.NoOverlap) {
           if ((overlapFlags & ItemOverlap.Simultaneous && i > j)
@@ -51,7 +51,7 @@ export function eventItemsToDayViewItems<T extends GmEventItem>(items: T[]): GmD
 
             /// Remove entry from `before` if both `before` items
             /// don't overlap. Keeps item from being pushed too far right
-            const overlapFlags = this.itemOverlapsItem(beforeItem1, beforeItem2);
+            const overlapFlags = itemOverlapsItem(beforeItem1, beforeItem2);
             if (overlapFlags === ItemOverlap.NoOverlap) {
               item.before.splice(item.before.indexOf(beforeItem2), 1);
             }
@@ -62,7 +62,7 @@ export function eventItemsToDayViewItems<T extends GmEventItem>(items: T[]): GmD
           /// Remove entry from `after` if the `before` item doesn't overlap
           /// the `after` item, then move the item from `after`'s `before`
           /// list to its `after` list to move it to the left.
-          const overlapFlags = this.itemOverlapsItem(beforeItem1, afterItem);
+          const overlapFlags = itemOverlapsItem(beforeItem1, afterItem);
           if (overlapFlags === ItemOverlap.NoOverlap) {
             item.after.splice(item.after.indexOf(afterItem), 1);
             afterItem.before.splice(afterItem.before.indexOf(item), 1);
@@ -75,7 +75,7 @@ export function eventItemsToDayViewItems<T extends GmEventItem>(items: T[]): GmD
     item.after.forEach( afterItem1 => {
       item.after.forEach( afterItem2 => {
         if (afterItem1 !== afterItem2) {
-          const overlapFlags = this.itemOverlapsItem(afterItem1, afterItem2);
+          const overlapFlags = itemOverlapsItem(afterItem1, afterItem2);
           if (overlapFlags === ItemOverlap.NoOverlap) {
             item.after.splice(item.after.indexOf(afterItem2), 1);
           }
@@ -83,7 +83,7 @@ export function eventItemsToDayViewItems<T extends GmEventItem>(items: T[]): GmD
       });
 
       item.before.forEach( beforeItem => {
-        const overlapFlags = this.itemOverlapsItem(afterItem1, beforeItem);
+        const overlapFlags = itemOverlapsItem(afterItem1, beforeItem);
         if (overlapFlags === ItemOverlap.NoOverlap) {
           item.before.splice(item.before.indexOf(beforeItem), 1);
           beforeItem.after.splice(beforeItem.after.indexOf(item), 1);
