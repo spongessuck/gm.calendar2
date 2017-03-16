@@ -1,13 +1,13 @@
 {
   "name": "gm.calendar2",
-  "version": "0.1.0",
+  "version": "1.0.0-beta.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
     "ngc": "ngc",
     "start": "ng serve",
     "build": "rimraf dist && gulp --silent && ngc -p dist/temp/tsconfig.aot.json && rimraf dist/temp",
-    "prepublish": "build",
+    "prepublish": "npm run build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
