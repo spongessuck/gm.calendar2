@@ -15,13 +15,20 @@
   <div style="text-align:center">
     <strong>{{today | date:'mediumDate'}}</strong>
   </div>
+  <div style="height:50px">
+    <gm-all-day-view-container>
+      <gm-day-view>
+        <gm-event-view [item]="allDayItem">
+          {{allDayItem.title}}
+        </gm-event-view>
+      </gm-day-view>
+    </gm-all-day-view-container>
+  </div>
   <div style="height:600px; overflow: auto">
-    <gm-day-view-container [scrollToHour]="7">
+    <gm-day-view-container [scrollToHour]="lastHour">
       <gm-day-view [isToday]="true">
         <gm-event-view *ngFor="let item of items" [item]="item">
-          <div class="item-container">
-            {{item.title}}
-          </div>
+          {{item.title}}
         </gm-event-view>
       </gm-day-view>
     </gm-day-view-container>

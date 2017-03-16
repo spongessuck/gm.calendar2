@@ -5,7 +5,7 @@ import { GmEventItem,
 
 interface MyEvent extends GmEventItem {
   title: string;
-  date: Date;
+  date: Date | number;
 }
 
 @Component({
@@ -18,17 +18,30 @@ export class AppComponent {
   today = new Date();
   monthDate = new Date();
   items: GmDayViewItem[];
+  lastHour = new Date().getHours() - 1;
+
+  allDayItem = {
+    title: 'All day event',
+    startTime: {
+      hours: 0,
+      minutes: 0
+    },
+    endTime: {
+      hours: 0,
+      minutes: 0
+    }
+  };
 
   private _events: MyEvent[] = [
     {
-      title: 'hi',
-      date: new Date(),
+      title: 'My Event',
+      date: new Date().setHours(12, 0),
       startTime: {
         hours: 12,
         minutes: 0
       },
       endTime: {
-        hours: 12,
+        hours: 14,
         minutes: 30
       }
     }
