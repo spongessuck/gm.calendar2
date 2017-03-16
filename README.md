@@ -55,6 +55,12 @@ A container element to hold `gm-day-view` components with events that last all d
 <gm-all-day-view-container></gm-day-view-container>
 ```
 
+#### Styles
+
+##### `.gm-day-view-spacer`
+
+This element pushes the `gm-day-view` components to make room for the time-of-day labels. You can set your own style rules to change the width.
+
 ### `gm-day-view`
 
 Shows a day view with events spanning their `startTime` and `endTime` properties.
@@ -107,13 +113,19 @@ import { GmDayViewItem,
 </gm-event-view>
 ```
 
-You'll need to apply your own style to either `gm-event-view` or its contents.
+These items have no style by default.
 
 #### Inputs
 
 ##### `item: GmDayViewItem`
 
 An item returned by `eventItemsToDayViewItems`.
+
+#### Styles
+
+##### `.gm-cal-item`
+
+This element holds whatever you put inside `<gm-event-view>`. You should set style rules for this class in your application global stylesheet.
 
 <!--# Configuration
 
