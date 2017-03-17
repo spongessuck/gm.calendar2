@@ -27,7 +27,7 @@ import { GmDayViewItem } from '../../day-view-item';
     }
 
     .gm-cal-item-container {
-      flex: 1 0 0;
+      width: 100%;
       position: relative;
       overflow: hidden;
     }
