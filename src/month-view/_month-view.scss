@@ -1,0 +1,27 @@
+.gm-month-event-row {
+	display: flex;
+	align-items: center;
+	padding: 0 0.5rem;
+}
+
+.gm-month-event-left {
+	flex-grow: 1;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	font-size: smaller;
+}
+
+.gm-month-event-right {
+	flex-shrink: 0;
+	font-size: small;
+	color: #888;
+}
+
+.gm-different-month {
+	background: #eee;
+}
+
+.gm-month-date {
+	padding-bottom: 1rem;
+}

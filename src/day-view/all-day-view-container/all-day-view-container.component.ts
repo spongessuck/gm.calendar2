@@ -18,17 +18,6 @@ import { GmCalendarService } from '../../calendar.service';
       display: flex;
       position: relative;
     }
-
-    .gm-day-view-spacer {
-      height: 100%;
-      width: 4rem;
-    }
-
-    .gm-day-view-line {
-      position: absolute;
-      width: 100%;
-      border-top: 1px solid whitesmoke;
-    }
   `]
 })
 export class GmAllDayViewContainerComponent implements OnInit  {

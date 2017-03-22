@@ -14,7 +14,7 @@
 		"noImplicitAny": false,
 		"suppressImplicitAnyIndexErrors": true,
 		"sourceRoot": "src",
-		"outDir": "../"
+		"outDir": "../js"
 	},
 	"files": [
 		"./index.ts"

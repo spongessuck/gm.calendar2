@@ -22,13 +22,6 @@ import { Component,
       position: relative;
       height: 100%;
     }
-
-    .gm-day-view-line {
-      position: absolute;
-      width: 100%;
-      border-top: 1px solid blue;
-      z-index: 1; /* Place on same level as eventView */
-    }
   `]
 })
 export class GmDayViewComponent implements OnInit, AfterViewInit {

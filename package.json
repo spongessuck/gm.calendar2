@@ -1,6 +1,6 @@
 {
   "name": "gm.calendar2",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.2",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -16,7 +16,7 @@
     "type": "git",
     "url": "https://github.com/spongessuck/gm.calendar2"
   },
-  "main": "dist/index.js",
+  "main": "dist/js/index.js",
   "peerDependencies": {
     "@angular/common": ">=2.0.0 <5.0.0",
     "@angular/core": ">=2.0.0 <5.0.0"
@@ -39,6 +39,7 @@
     "gulp": "^3.9.1",
     "gulp-copy": "^1.0.0",
     "gulp-inline-ng2-template": "^4.0.0",
+    "gulp-sass": "^3.1.0",
     "jasmine-core": "~2.5.2",
     "jasmine-spec-reporter": "~3.2.0",
     "karma": "~1.4.1",

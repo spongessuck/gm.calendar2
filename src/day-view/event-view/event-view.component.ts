@@ -25,22 +25,6 @@ import { GmDayViewItem } from '../../day-view-item';
       width: 100%;
       display: flex;
     }
-
-    .gm-cal-item-container {
-      width: 100%;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .gm-cal-item {
-      overflow: hidden;
-      z-index: 1; /* Place higher than gmEventView so clicks trigger properly */
-    }
-
-    .gm-cal-item-spacer {
-      flex: 1 0 0;
-      pointer-events: none;
-    }
   `]
 })
 export class GmEventViewComponent implements OnInit {
