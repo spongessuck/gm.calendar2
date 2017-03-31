@@ -1,5 +1,7 @@
 # gm.calendar2
 
+Set of Angular components to display day, week, and month calendars with events.
+
 [![npm version](https://badge.fury.io/js/gm.calendar2.svg)](https://badge.fury.io/js/gm.calendar2)
 
 ## Components
