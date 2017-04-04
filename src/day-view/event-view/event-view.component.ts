@@ -18,14 +18,7 @@ import { GmDayViewItem } from '../../day-view-item';
       </div>
     </div>
     <div class="gm-cal-item-spacer" *ngFor="let after of dayViewItem.after"></div>
-  `,
-  styles: [`
-    :host {
-      position: absolute;
-      width: 100%;
-      display: flex;
-    }
-  `]
+  `
 })
 export class GmEventViewComponent implements OnInit {
 

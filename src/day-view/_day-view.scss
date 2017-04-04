@@ -15,7 +15,7 @@
 }
 
 .gm-cal-item-container {
-	width: 100%;
+	flex: 1;
 	position: relative;
 	overflow: hidden;
 }
@@ -28,4 +28,10 @@
 .gm-cal-item-spacer {
 	flex: 1 0 0;
 	pointer-events: none;
+}
+
+gm-day-view-container gm-event-view {
+	position: absolute;
+	width: 100%;
+	display: flex;
 }
