@@ -15,9 +15,12 @@
   <div style="text-align:center">
     <strong>{{today | date:'mediumDate'}}</strong>
   </div>
-  <div style="height:50px">
+  <div style="padding-bottom:0.5rem">
     <gm-all-day-view-container>
       <gm-day-view>
+        <gm-event-view [item]="allDayItem">
+          {{allDayItem.title}}
+        </gm-event-view>
         <gm-event-view [item]="allDayItem">
           {{allDayItem.title}}
         </gm-event-view>

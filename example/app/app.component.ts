@@ -44,6 +44,18 @@ export class AppComponent {
         hours: 14,
         minutes: 30
       }
+    },
+    {
+      title: 'My Event2',
+      date: new Date().setHours(13, 0),
+      startTime: {
+        hours: 13,
+        minutes: 0
+      },
+      endTime: {
+        hours: 15,
+        minutes: 0
+      }
     }
   ];
 
