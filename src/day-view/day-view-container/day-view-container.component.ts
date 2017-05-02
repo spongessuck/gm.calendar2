@@ -28,7 +28,11 @@ interface Marker {
 })
 export class GmDayViewContainerComponent implements OnInit, AfterViewInit  {
 
-  @Input() scrollToHour = 0;
+  private _scrollToHour = 0;
+  @Input() set scrollToHour(val: number) {
+    this._scrollToHour = val;
+    this.scrollToStartHour();
+  }
 
   markers: {
     pxFromTop: number;
@@ -53,7 +57,11 @@ export class GmDayViewContainerComponent implements OnInit, AfterViewInit  {
 
   ngAfterViewInit() {
     // Scroll to given hour
-    const startHourLine = this.elRef.nativeElement.querySelector('.gm-day-view-line:nth-child(' + (+this.scrollToHour + 1) + ')');
+    this.scrollToStartHour();
+  }
+
+  scrollToStartHour() {
+    const startHourLine = this.elRef.nativeElement.querySelector('.gm-day-view-line:nth-child(' + (this._scrollToHour + 1) + ')');
     if (startHourLine) {
       this.elRef.nativeElement.parentNode.scrollTop = startHourLine.offsetTop;
     }
