@@ -18,7 +18,7 @@ import { Component,
   `,
   styles: [`
     :host {
-      flex: 1 0 0;
+      flex: 1 0;
       position: relative;
       height: 100%;
     }
