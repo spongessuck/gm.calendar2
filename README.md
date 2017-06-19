@@ -6,7 +6,7 @@ Set of Angular components to display day, week, and month calendars with events.
 
 ## Demo
 
-http://spongessuck.github.io/demos/#/gm.calendar2
+http://spongessuck.github.io/ng2/demos/#/gm.calendar2
 
 ## Components
 
